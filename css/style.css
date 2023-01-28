@@ -1,0 +1,422 @@
+:root {
+    --VioletBlue: #4E6FE6;
+    --DarkViolet: #5851F0;
+    --Violet: #7E55D9;
+    --DarkPink: #AF51F0;
+    --Pink: #D14EE6;
+    --Black: #000000;
+    --White: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--Black);
+}
+
+p ,span ,button{
+    font-size: 2em;
+}
+
+.banner {
+    font-size: 1.3em;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    line-height: 33px; 
+    text-align: center;
+    letter-spacing: 0.16em;
+    background-color: var(--Black);
+    color: var(--White);
+    display: none;
+}
+
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header{
+    display: flex;
+    padding-bottom: 20px;
+    
+}
+
+h1{
+    display: none;
+}
+
+
+/* Boton Hamburguesa con Animacion */
+.menu-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    z-index: 2000;
+    /* border: 3px solid #fff; */
+}
+
+.menu-btn__burger {
+    width: 50px;
+    height: 6px;
+    background: #0F0F0F;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255 101 47/.2);
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: #0F0F0F;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255 101 47/.2);
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-16px);
+}
+
+.menu-btn__burger::after {
+    transform: translateY(16px);
+}
+
+/*Animation*/
+
+.menu-btn.open .menu-btn__burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+
+/*Fin  Boton Hamburguesa con Animacion */
+
+/* Comienzo Nav */
+nav{
+    font-size: 2em;
+    position: absolute;
+    z-index: 1000;
+    background-color: red;
+}
+nav ul {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-around;
+    
+    
+}
+nav ul li{
+    padding: 0 32px;
+}
+nav ul li a{
+    color: #000000;
+    
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
+
+button{
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.darkMode{
+    display: flex;
+}
+.visible{
+    display: none;
+}
+
+
+svg{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+svg:hover{
+    background-color: var(--VioletBlue);
+    border-radius: 30px;
+}
+
+/* carrito */
+
+.carro{
+    padding-top: 10px;
+    color:#fff
+  }
+i, .fa {
+    min-height: 100px;
+    min-width: 100px;
+    display: inline-block;
+    border-radius: 50%;
+  }
+  
+  .cart-total {
+    position: relative;
+    top: -40px;
+    left: -25px;
+    font-size: 1.5em;
+    min-width: 60px;
+    line-height: 60px;
+    border-radius: 100%;
+    display: inline-block;
+  }
+  
+  .cart-icon1 {
+    background: #9e4ae0;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 40px;
+  }
+  
+  .cart-total-1 {
+    background: #181818;
+    font-weight: bold;
+    border: 3px dotted #9e4ae0;
+    text-align: center;
+  }
+/* Fin carrito */
+/* Fin Nav */
+/* Comienzo Main */
+.logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Comienzo Slider */
+.container-slider{
+    position: relative;
+    border: 1px solid black;
+    max-width: 90%;
+    margin: 0  auto;
+    overflow: hidden;
+    box-shadow: 0 0 0 10px rgba(244, 228, 228, 0.566),
+    0 15px 100px #000;
+}
+
+
+.slider{
+    display: flex;
+    width: 400%;
+    height: 400px;
+    margin-left: -100%;
+}
+
+.slider__section{
+    width: 100%;
+}
+.slider__img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider__btn{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background:rgba(255,255,255,0.8);
+    border: 1px solid black;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider__btn:hover{
+    background: #fff;
+}
+
+.slider__btn--left{
+    left: 10px;
+}
+
+.slider__btn--right{
+    right: 10px;
+}
+
+
+.container-slider{
+    margin-bottom: 20PX;
+}
+
+/* Fin Slider */
+
+/* Comienzo Carrito */
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 600px;
+    background-image: rgba(255, 255, 255);
+    gap: 20px 
+}
+
+h3 {
+    color: rgb(167, 61, 61);
+    font-size: 1.6em;
+    background-image: no-repeat;
+    background-image: fixed;
+    background-image: center;
+}
+
+.item {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.item img{
+    visibility: hidden;
+    z-index: -1;
+}
+
+.item button{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    cursor: pointer;
+}
+
+.item-1 {
+    background: url(../assets/images/extraterrestre1.jpg);
+    background-size: cover;
+    background-image: center;
+}
+
+.item-2 {
+    background: url(../assets/images/extraterrestre2.jpg);
+    background-size: cover;
+    background-image: center;
+}
+
+.item-3 {
+    background: url(../assets/images/extraterrestre3.jpg);
+    background-size: cover;
+    background-image: center;
+}
+
+.item-4 {
+    background: url(../assets/images/extraterrestre4.jpg);
+    background-size: cover;
+    background-image: center;
+}
+
+.item-5 {
+    background: url(../assets/images/extraterrestre5.jpg);
+    background-size: cover;
+    background-image: center;
+}
+
+.item-6 {
+    background: url(../assets/images/extraterrestre6.jpg);
+    background-size: cover;
+    background-image: center;
+}
+
+.carrito{
+    background-color: white;
+    color: #000;
+    margin: 20px;
+    width: 600px;
+    padding-bottom: 10px;
+}
+
+
+/* Fin Carrito */
+
+/* Fin Main */
+
+@media   (min-width: 1200px){
+    header{
+        background-color: var(--DarkViolet);
+        justify-content: space-around;
+        display: flex;
+        flex-direction: row;
+        border-radius: 10px 10px 0px 0px;
+        margin: 20px ;
+        
+    }
+    .menu-btn{
+        display: none;
+    }
+    h1{
+        display: flex;
+        text-align: center;
+        align-items: center;
+    }
+    nav{
+        position: static;
+        background-color: inherit;
+        
+    }
+    nav ul{
+        flex-direction: row;
+        height: 100%;
+        
+        
+    }
+    .visible{
+        display: block;
+    }
+    .banner{
+        display: block;
+    }
+}
+
+
+
